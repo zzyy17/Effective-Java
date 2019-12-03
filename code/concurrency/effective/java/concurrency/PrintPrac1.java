@@ -1,9 +1,9 @@
 package effective.java.concurrency;
 
-public class printPrac1 implements Runnable{
+public class PrintPrac1 implements Runnable{
 
     private int cnt;
-    public printPrac1(int cnt) {
+    public PrintPrac1(int cnt) {
         System.out.println("[msg] printing is starting....");
         this.cnt = cnt;
     }

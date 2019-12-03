@@ -1,16 +1,19 @@
 package effective.java.concurrency;
 
-public class fibonacciPrac2 implements Runnable {
+import java.util.concurrent.Callable;
+
+public class FibonacciPrac5 implements Callable<String>{
 
     private int n;
     private boolean isUse = false;
-    public fibonacciPrac2() {}
-    public fibonacciPrac2(int n) {
+    public FibonacciPrac5() {}
+    public FibonacciPrac5(int n) {
         this.n = n;
     }
 
     public void helper() {
-        int pre = 1, p = 1;
+        int pre = 1;
+        int p = 1;
         for (int i = 0; i < n; i++) {
             if (i < 2) {
                 System.out.print(1 + ", ");
@@ -27,9 +30,11 @@ public class fibonacciPrac2 implements Runnable {
         }
         System.out.println();
     }
+
     @Override
-    public void run() {
+    public String call() throws Exception {
         System.out.print("[Array]: ");
         helper();
+        return "[msg]: Done.";
     }
 }
